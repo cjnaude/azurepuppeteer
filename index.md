@@ -18,7 +18,9 @@ Disclaimer: This was my first time working with a Docker Container, and my knowl
 ### Step 1: Getting a Azure Function Docker Image running and working locally
 
 This in itself is already a multi-step process, so I'm just going to link you to the guide I used to complete this step:
+
 https://medium.com/@nahuelfedericoberg/azure-functions-docker-basic-demo-4a01be1c15bd
+
 In step 3 of the guide (creating the new function), be sure to select javascript (node) instead of C#, and then select HttpTrigger.
 If you're running on Windows and you're having trouble connecting to the function on localhost, you can try connecting straight to the Docker Machine's IP instead (this is what I had to do).
 
@@ -31,6 +33,7 @@ Here we first have to get Puppeteer involved. Add the following to your dockerfi
     COPY . /home/site/wwwroot
 
 This will use the following project to make puppeteer available:
+
 https://github.com/estruyf/azure-function-node-puppeteer
 
 Now for the actual function itself. Here's the code that I used:
@@ -103,7 +106,9 @@ You can ofcourse play around with the PDF options and the above object if you do
 ### Step 3: Deploy the docker image to an Azure Function
 
 This is also a multi-step process, so I will again just link to the guide I used to accomplish this. It involves setting up a Docker Hub repository, pushing the image to that repo, then linking up to it from the newly created Azure Function. Here's the guide:
+
 https://medium.com/@carlosboichu87/using-azure-functions-with-docker-a3bb5da7526a
+
 You can just skip to the "Deploying an Azure Function using a Docker Container. (in Azure Portal)" section.
 
 ### Step 4: Calling the function from our .net Core code
